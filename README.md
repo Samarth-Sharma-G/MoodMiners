@@ -6,6 +6,8 @@ The sentiment analysis project involves creating a system that analyzes emotions
 
 The final assessment Area under the Curve (Reciever-Operating Characteristic Curves) for the models look like so:
 
+**For more high resolution images, individual full resolution images are within the /images folder.**
+
 ## ROC Curves
 
 ![ROC Curves](./images/all_3_rocs.png)
