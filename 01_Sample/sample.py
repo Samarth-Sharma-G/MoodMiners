@@ -4,6 +4,7 @@ import librosa
 import pandas as pd
 import shutil
 import sys
+import json
 
 # Mood Miners Emotion Detection Project
 # Description: This file contains the code to load the data from the zip file
@@ -117,5 +118,18 @@ for actors_zip in os.listdir(zip_path):
     else:
         actors_meta_df = pd.concat([actors_meta_df, actor_audio_df])
 print('Finished processing all the zip files in the directory')
+print("Converting the 'list of list' features to JSON strings...")
+#convert the list of list features to json and then string so that it can be stored in a csv as a string with full fidelity
+actors_meta_df['spectral_centroid'] = actors_meta_df['spectral_centroid'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['spectral_bandwidth'] = actors_meta_df['spectral_bandwidth'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['spectral_rolloff'] = actors_meta_df['spectral_rolloff'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['zero_crossing_rate'] = actors_meta_df['zero_crossing_rate'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['chroma_stft'] = actors_meta_df['chroma_stft'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['mfcc'] = actors_meta_df['mfcc'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['rmse'] = actors_meta_df['rmse'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['onset_env'] = actors_meta_df['onset_env'].apply(lambda x: json.dumps(x.tolist()))
+actors_meta_df['y'] = actors_meta_df['y'].apply(lambda x: json.dumps(x.tolist()))
 actors_meta_df.to_csv('actors_meta_df.csv', index=False)
 print('Saved the dataframe to actors_meta_df.csv')
+
+
