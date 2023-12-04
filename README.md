@@ -1,5 +1,5 @@
 # 📊 MoodMiners-Project-Proposal
 
-The sentiment analysis project involves creating a system that analyzes emotions from audio files in .wav format. The system takes into account several features that define the context and content of the audio sample.
+[Full Project Report](https://docs.google.com/document/d/1cpSbR_xyYgJtLfv-9f3B5DH_xixvS6YQsjz4ynyA8y8/edit?usp=sharing)
 
-Detailed Proposal: https://docs.google.com/document/d/10HlZkfuXdQvDZFWEu_t-Giv9cDBNnumBCyAu97x3zDY/edit?usp=sharing
+The sentiment analysis project involves creating a system that analyzes emotions from audio files in .wav format. The system takes into account several features that define the context and content of the audio sample.
